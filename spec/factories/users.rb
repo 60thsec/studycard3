@@ -1,7 +1,11 @@
 FactoryGirl.define do
   factory :user do
-    username "MyString"
-password_digest "MyString"
+    password "password"
+    sequence(:username) { |n| "testuser#{n}" }
+
+    factory :invalid_user do
+      username nil
+    end
   end
 
 end

@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:session][:username])
 
     if @user && @user.authenticate(params['session']['password'])
-      auth_log_in
+      auth_log_in(@user)
       redirect_to root_path
     else
       flash[:error] = "Sorry, username or password was invalid."
@@ -16,12 +16,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.destroy
-    redirect_to root_url 
+    redirect_to root_url
   end
-
-  private
-    def auth_log_in
-      session[:user_id] = @user.id
-      flash[:notice] = "Hello, #{@user.username}"
-    end
 end
