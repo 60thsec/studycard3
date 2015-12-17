@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
+  resources :decks
 
+  get    '/login'  => 'sessions#new'
   delete '/logout' => 'sessions#destroy'
+
 
 end
