@@ -12,4 +12,10 @@ FactoryGirl.define do
     association :user
     sequence(:title) { |n| Faker::Lorem.word + n.to_s }
   end
+
+  factory :card do
+      association :deck
+      sequence(:front) { |n| Faker::Lorem.word + n.to_s }
+      sequence(:back) { |n| Faker::Lorem.word + n.to_s }
+    end
 end

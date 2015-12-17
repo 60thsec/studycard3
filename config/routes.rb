@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
-  resources :decks
+  resources :decks do
+    resources :cards
+  end
 
   get    '/login'  => 'sessions#new'
   delete '/logout' => 'sessions#destroy'
