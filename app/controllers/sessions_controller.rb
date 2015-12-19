@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(session[:user_id])
+    @user = get_current_user
     flash[:notice] = "Goodbye, #{@user.username}"
     session.destroy
 
