@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params['session']['password'])
       auth_log_in(@user)
-      redirect_to root_path
+      redirect_to decks_url
     else
       flash[:error] = "Sorry, username or password was invalid."
       render 'sessions/new'
@@ -16,6 +16,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.destroy
-    redirect_to root_url
+    redirect_to login_url
   end
 end

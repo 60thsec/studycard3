@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def index
     if logged_in?
-      redirect to decks_url
+      redirect_to decks_url
     else
       render :index, layout: 'splash'
     end
