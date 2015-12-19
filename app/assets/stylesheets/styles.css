@@ -3,8 +3,9 @@
 }
 
 .container {
-  margin: 0 auto;
-  width: 90%;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  width: 82%;
   min-width: 21em;
 }
 
@@ -13,6 +14,34 @@ Forms
 ****************************************/
 .form-div {
   margin: 1em 0;
+}
+
+/***************************
+Side Menu
+****************************/
+#menu {
+  background: #222;
+}
+
+#menu .pure-menu-selected,
+#menu .pure-menu-heading {
+    background: #e6c12e;
+}
+    /*
+    This styles a link within a selected menu item `<li>`.
+    */
+    #menu .pure-menu-selected a {
+        color: #fff;
+    }
+
+#menu .pure-menu-heading {
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -.075em;
+    /*color: #fffffa;*/
+    color: #333;
+    margin: 0;
+    text-transform: none;
 }
 
 /****************************************
