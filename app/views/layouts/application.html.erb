@@ -49,18 +49,18 @@
         </div>
       </div>
 
-      <div id="main" class="centered">
-        <%  unless flash[:message].nil?  %>
-          <div id="flash_message">
-            <%= flash[:message] %>
-          </div>
-        <% end %>
+      <main id="main" class="centered">
+        <div class="centered" id="flash-div">
+          <% flash.each do |key, value| %>
+            <%= content_tag :div, value, class: "flash #{key}" %>
+          <% end %>
+        </div>
 
         <%= yield %>
 
-      </div>
+      </main>
     </div>
-    
+
   <script src="/js/ui.js"></script>
 </body>
 </html>

@@ -14,7 +14,6 @@ class ApplicationController < ActionController::Base
   private
     def auth_log_in(user)
       session[:user_id] = user.id
-      flash[:notice] = "Hello, #{user.username}"
     end
 
     def logged_in?

@@ -3,10 +3,20 @@
 }
 
 .container {
-  margin: 3rem auto;
+  margin: 0 auto;
   padding: 0 1rem;
   width: 82%;
   min-width: 21em;
+  text-align: left;
+}
+
+.centered {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#flash-div {
+  height: 3rem;
 }
 
 /****************************************
