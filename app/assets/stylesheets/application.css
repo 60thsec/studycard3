@@ -12,4 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
+ *= require pure.css
+ *= require side-menu.css
+ *= require grids-responsive.css
  */

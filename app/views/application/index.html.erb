@@ -1,3 +1,64 @@
-Index
+<div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head">StudyCard</h1>
+        <p class="splash-subhead">
+            A friendly and convenient SRS app designed to help you study faster, better.
+        </p>
+        <p>
+            <a href="/login" class="button">Sign in</a>
+            <a href="/users/new" class="button">Create a new account</a>
+        </p>
+    </div>
+</div>
 
-<%= link_to 'Sign out', logout_path, method: :delete if auth_logged_in? %>
+<div class="content-wrapper">
+  <div class="ribbon scroll-indicator">
+    <%= fa_icon "angle-double-up 4x" %>
+  </div>
+
+  <div class="content">
+    <h2 class="content-head is-center">
+      StudyCard is like flashcards, only better.
+    </h2>
+
+    <div class="pure-g">
+      <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+        <h2 class="content-subhead">
+          <%= fa_icon "clock-o" %>
+          SRS
+        </h2>
+        <p>
+          Spaced Repetition System. StudyCard schedules each review depending on the difficulty of the card.  Based on Supermemo.
+        </p>
+      </div>
+      <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+        <h2 class="content-subhead">
+          <%= fa_icon "circle-o" %>
+          Simple
+        </h2>
+        <p>
+          Easy to start studying.  Easy to study anywhere you want.  Easy to pick up where you left off.
+        </p>
+      </div>
+      <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+        <h2 class="content-subhead">
+          <%= fa_icon "language" %>
+          Translate
+        </h2>
+        <p>
+          Studying a language?  Just tell StudyCard which one and let it help you build decks faster.
+        </p>
+      </div>
+      <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+        <h2 class="content-subhead">
+          <%= fa_icon "sliders" %>
+          Flexible
+        </h2>
+        <p>
+          Optimize your cards for any subject.  Control how you want to learn.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
