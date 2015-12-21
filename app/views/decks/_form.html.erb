@@ -1,0 +1,6 @@
+<%= form_for @deck, html: {class: 'pure-form pure-form-stacked'} do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.submit class: 'pure-button' %>
+<% end %>
