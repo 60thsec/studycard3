@@ -19,6 +19,15 @@
   height: 3rem;
 }
 
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /****************************************
 Forms
 ****************************************/
