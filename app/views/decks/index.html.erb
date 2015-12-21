@@ -1,3 +1,9 @@
 <div class="container">
   <h2>Decks Index</h2>
+  <ul>
+    <% @decks.each do |deck| %>
+      <%= link_to deck.title, deck_path(deck) %>
+    <% end %>
+  </ul>
+  <%= link_to "New Deck", new_deck_path %>
 </div>
