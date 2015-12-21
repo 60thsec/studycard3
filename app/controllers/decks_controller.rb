@@ -12,7 +12,7 @@ class DecksController < ApplicationController
   end
 
   def create
-    deck = Deck.new(deck_params)
+    deck = get_current_user.decks.new(deck_params)
 
     if deck.save
       redirect_to decks_url
