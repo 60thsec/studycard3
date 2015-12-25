@@ -1,5 +1,7 @@
 <div class="container">
-  <h2><%= @deck.title %></h2>
+  <div class="centered">
+    <h2><%= @deck.title %></h2>
+  </div>
 
   <div id="study-container" class="pure-g">
     <div id="study-console" class="pure-u-1 pure-u-sm-3-5 centered">
@@ -17,7 +19,7 @@
         </button>
       </div>
 
-      <div id="control-a">
+      <div id="control-a" style="display: none">
         <button id="missed-card-button" class="red-button pure-button">
           Missed
         </button>
