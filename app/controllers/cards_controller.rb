@@ -14,8 +14,10 @@ class CardsController < ApplicationController
   def create
     @card = Card.new(card_params)
     if @card.save
-      redirect_to deck_cards_url
+      flash[:success] = "Card saved"
+      redirect_to new_deck_card_url(@deck)
     else
+      flash[:error] = "Card not saved"
       render :new
     end
   end
@@ -30,7 +32,7 @@ class CardsController < ApplicationController
 
   def destroy
     @card.destroy
-    redirect_to deck_cards_url 
+    redirect_to deck_cards_url
   end
 
   private

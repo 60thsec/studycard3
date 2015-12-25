@@ -1,0 +1,9 @@
+<%= form_for [@deck, @card], html: {class: "pure-form pure-form-stacked"} do |f| %>
+  <%= f.label :front %>
+  <%= f.text_field :front %>
+
+  <%= f.label :back %>
+  <%= f.text_field :back %>
+
+  <%= f.submit 'Save', class: 'pure-button' %>
+<% end %>

@@ -1,3 +1,9 @@
 <div class="container">
   <h2>New Card</h2>
+
+  <div class="form-div">
+    <%= render 'form' %>
+  </div>
+  <%= link_to 'Back to decks', decks_path %><br />
+  <%= link_to 'Study now', deck_path(@deck) %>
 </div>
