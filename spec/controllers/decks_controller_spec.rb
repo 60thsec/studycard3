@@ -4,6 +4,7 @@ RSpec.describe DecksController, type: :controller do
   before do
     @user = FactoryGirl.create(:user)
     @deck = FactoryGirl.create(:deck, user: @user)
+    @card = FactoryGirl.create(:card, deck: @deck)
     request.session[:user_id] = @user.id
   end
 
@@ -45,6 +46,14 @@ RSpec.describe DecksController, type: :controller do
     it "renders :show template" do
       get :show, id: @deck
       expect(response).to render_template :show
+    end
+
+    it "redirects to cards#new if there are no cards in the deck" do
+      empty_deck = FactoryGirl.create(:deck, user: @user)
+
+      get :show, id: empty_deck
+
+      expect(response).to redirect_to new_deck_card_url
     end
 
     it "redirects if not signed in" do
