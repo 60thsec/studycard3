@@ -15,6 +15,10 @@
   text-align: center;
 }
 
+.small {
+  font-size: 75%;
+}
+
 #flash-div {
   height: 3rem;
 }
@@ -105,7 +109,7 @@ Study Deck Page
 }
 
 #card-control-console {
-  display: none;
+  /*display: none;*/
   margin-top: 1rem;
 }
 
