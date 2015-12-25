@@ -13,6 +13,7 @@ class CardsController < ApplicationController
 
   def create
     @card = @deck.cards.new(card_params)
+    @card.due = DateTime.now
     if @card.save
       flash[:success] = "Card saved"
       redirect_to new_deck_card_url(@deck)
