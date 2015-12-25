@@ -78,19 +78,23 @@ RSpec.describe CardsController, type: :controller do
   describe "create" do
     it "saves a new deck with valid input" do
       expect {
-        post :create, deck_id: @deck, card: FactoryGirl.attributes_for(:card, deck: @deck)
+        post :create,
+             deck_id: @deck,
+             card: FactoryGirl.attributes_for(:card, deck: @deck)
       }.to change(Card, :count).by(1)
     end
 
     it "doesn't save a new deck with invalid input" do
       expect {
-        post :create, deck_id: @deck, card: FactoryGirl.attributes_for(:card, front: nil, deck: @deck)
+        post :create,
+             deck_id: @deck,
+             card: FactoryGirl.attributes_for(:card, front: nil, deck: @deck)
       }.to_not change(Deck, :count)
     end
 
-    it "redirects to cards#index" do
+    it "redirects to cards#new" do
       post :create, deck_id: @deck, card: FactoryGirl.attributes_for(:card)
-      expect(response).to redirect_to(deck_cards_url)
+      expect(response).to redirect_to(new_deck_card_url(@deck))
     end
   end
 
