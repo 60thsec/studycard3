@@ -7,6 +7,10 @@ class DecksController < ApplicationController
     @decks = user.decks
   end
 
+  def show
+    redirect_to new_deck_card_url(@deck) if @deck.cards.count == 0
+  end
+
   def new
     @deck = Deck.new
   end

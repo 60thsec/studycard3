@@ -53,7 +53,7 @@ RSpec.describe DecksController, type: :controller do
 
       get :show, id: empty_deck
 
-      expect(response).to redirect_to new_deck_card_url
+      expect(response).to redirect_to new_deck_card_url(empty_deck)
     end
 
     it "redirects if not signed in" do
