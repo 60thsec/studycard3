@@ -45,4 +45,8 @@ $(document).ready(function(){
   function getDeckID() {
     return $.trim($('#deck-id').html());
   };
+
+  function getCardID() {
+    return $.trim($('#card_id').html());
+  };
 });

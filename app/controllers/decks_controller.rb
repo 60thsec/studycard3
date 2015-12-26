@@ -9,7 +9,6 @@ class DecksController < ApplicationController
 
   def show
     redirect_to new_deck_card_url(@deck) if @deck.cards.count == 0
-    @card = @deck.get_next_card('init')
   end
 
   def new
