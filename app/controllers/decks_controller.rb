@@ -38,6 +38,11 @@ class DecksController < ApplicationController
     redirect_to decks_url
   end
 
+  def study
+    @card = @deck.get_next_card(params[:rating])
+    render json: { 'card' => @card, 'message' => '' }
+  end
+
   private
     def deck_params
       params.require(:deck).permit(:title)

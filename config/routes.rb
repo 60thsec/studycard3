@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
   get    '/login'  => 'sessions#new'
   delete '/logout' => 'sessions#destroy'
-
+  post   '/study/:id'  => 'decks#study'
 
 end

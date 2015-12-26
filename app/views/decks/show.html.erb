@@ -1,6 +1,7 @@
 <div class="container">
   <div class="centered">
     <h2><%= @deck.title %></h2>
+    <span class="hidden" id="deck-id"><%= @deck.id %></span>
     <%= link_to 'add new cards', new_deck_card_path(@deck), class: "small" %>
   </div>
 
