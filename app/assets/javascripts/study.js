@@ -21,7 +21,7 @@ $(document).ready(function(){
       type: 'post',
       url: '/study/' + getDeckID(),
       dataType: 'json',
-      data: {rating: args.rating}
+      data: {rating: args.rating, card: getCardID()}
     });
 
     req.done(function(res){
