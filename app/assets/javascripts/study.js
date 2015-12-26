@@ -43,6 +43,6 @@ $(document).ready(function(){
   };
 
   function getDeckID() {
-    return parseInt($('#deck-id').html());
+    return $.trim($('#deck-id').html());
   };
 });
