@@ -39,8 +39,8 @@ class DecksController < ApplicationController
   end
 
   def study
-    @card = @deck.get_next_card(params[:rating])
-    render json: { 'card' => @card, 'message' => '' }
+    card = @deck.get_next_card(params[:rating])
+    render json: { 'card' => card, 'message' => '' }
   end
 
   private

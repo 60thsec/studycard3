@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  console.log('ready!');
   makeAjaxCall({rating: 'init'});
 
   $('#show-answer-button').click(function(e){
@@ -44,7 +43,6 @@ $(document).ready(function(){
   };
 
   function getDeckID() {
-    console.log(parseInt($('#deck-id').html()))
     return parseInt($('#deck-id').html());
   };
 });
