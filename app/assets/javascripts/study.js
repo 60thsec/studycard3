@@ -1,5 +1,6 @@
 $(document).ready(function(){
-  makeAjaxCall({rating: 'init'});
+  console.log('oi!');
+  makeAjaxCall( {rating: 'init'} );
 
   $('#show-answer-button').click(function(e){
     toggleDisplay();

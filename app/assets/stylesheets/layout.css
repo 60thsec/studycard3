@@ -1,0 +1,52 @@
+/***************************
+Flash Messages
+***************************/
+
+.flash {
+  width: 50%;
+  margin: 2rem auto;
+  padding: 1rem 0;
+  border: 1px solid rgba(10, 10, 10, 0.25);
+  border-radius: .3rem;
+  position: relative;
+  background-color: white; }
+  .flash > :first-child {
+    margin-top: 0; }
+  .flash > :last-child {
+    margin-bottom: 0; }
+  .flash.primary {
+    background-color: #def0fc; }
+    .flash.primary a {
+      color: #116ca8; }
+      .flash.primary a:hover {
+        color: #0a4063; }
+  .flash.secondary {
+    background-color: #ebebeb; }
+  .flash.success {
+    background-color: #e1faea; }
+    .flash.success a {
+      color: #1ea450; }
+      .flash.success a:hover {
+        color: #126330; }
+  .flash.alert {
+    background-color: #fce6e2; }
+    .flash.alert a {
+      color: #bf2b13; }
+      .flash.alert a:hover {
+        color: #791b0c; }
+  .flash.warning {
+    background-color: #fff3d9; }
+    .flash.warning a {
+      color: #b37a00; }
+      .flash.warning a:hover {
+        color: #664600; }
+  .flash.small {
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem; }
+  .flash.large {
+    padding-top: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 3rem; }
