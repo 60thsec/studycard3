@@ -1,7 +1,7 @@
 <%= form_for [@deck, @card],
              html: {class: "pure-form pure-form-stacked"} do |f| %>
   <%= f.label :front %>
-  <%= f.text_field :front %>
+  <%= f.text_field :front, autofocus: true %>
 
   <%= f.label :back %>
   <%= f.text_field :back %>
