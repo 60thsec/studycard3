@@ -1,0 +1,78 @@
+/****************************************
+Study Deck Page
+****************************************/
+
+#study-console {
+  min-height: 15rem;
+  border: 1px solid #555;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: .25rem;
+  margin-top: 1rem;
+  background-color: #fffffa;
+  box-shadow: inset 0 0 .5rem #bbb;
+}
+
+#control-q {
+  padding:1rem;
+}
+
+#card-a {
+  /*display: none;*/
+  padding:1rem;
+}
+
+#card-message {
+  margin-top: 4rem;
+  /*display: none;*/
+}
+
+#control-console {
+  margin-top: 1.5rem;
+}
+
+#control-a {
+  /*display: none;*/
+}
+
+#card-control-console {
+  /*display: none;*/
+  margin-top: 1rem;
+}
+
+#card-control-console a {
+  color: #666;
+  text-decoration: none;
+}
+
+#card-control-console a:hover {
+  color: #666;
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+#easy-card-button,
+#good-card-button,
+#retry-card-button,
+#missed-card-button {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#missed-card-button {
+  background: #aa3939;
+}
+
+#retry-card-button {
+  background: #aa6c39;
+}
+
+#good-card-button {
+  background: #2d882d;
+}
+
+#easy-card-button {
+  background: #226666;
+}
