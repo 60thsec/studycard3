@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     resources :cards
   end
 
-  get    '/login'  => 'sessions#new'
-  delete '/logout' => 'sessions#destroy'
+  get    '/login'      => 'sessions#new'
+  delete '/logout'     => 'sessions#destroy'
   post   '/study/:id'  => 'decks#study'
 
 end
