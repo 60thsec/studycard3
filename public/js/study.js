@@ -38,9 +38,6 @@ $(document).ready(function(){
     $('#card-q').html(card.front);
     $('#card-a').html(card.back);
     $('#card-id').html(card.id);
-    // if (message !== undefined) {
-    //   $('#card-message').html((message));
-    // };
   };
 
   function getDeckID() {
