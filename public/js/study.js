@@ -1,12 +1,13 @@
 $(document).ready(function(){
-  console.log('oi!');
-  makeAjaxCall( {rating: 'init'} );
+  makeAjaxCall( {rating: 'init', card: getCardID()} );
 
   $('#show-answer-button').click(function(e){
+    e.preventDefault();
     toggleDisplay();
   });
 
   $('#good-card-button').click(function(e) {
+    e.preventDefault();
     makeAjaxCall({ rating: 'good' });
   });
 
@@ -41,10 +42,10 @@ $(document).ready(function(){
   };
 
   function getDeckID() {
-    return $.trim($('#deck-id').html());
+    return $('#deck-id').val();
   };
 
   function getCardID() {
-    return $.trim($('#card_id').html());
+    return $('#card-id').val();
   };
 });

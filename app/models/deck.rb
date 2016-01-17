@@ -3,7 +3,7 @@ class Deck < ActiveRecord::Base
   has_many   :cards, dependent: :destroy
   validates  :title, presence: true
 
-  def get_next_card(rating)
+  def get_next_card
     cards.order(:due).first
   end
 end

@@ -1,3 +1,7 @@
+<% content_for(:body_attributes) do %>
+  data-no-turbolink="true"
+<% end %>
+
 <div class="container">
 
   <div class="centered">
@@ -44,10 +48,11 @@
       <div id="card-message" class="small">
       </div>
     </div>
-    
-    <span class="hidden" id="deck-id"><%= @deck.id %></span>
-    <span class="hidden" id="card-id"></span>
   </div>
 </div>
+
+<%= form_tag '#' %>
+  <%= hidden_field_tag 'card-id', @deck.get_next_card.id, id: 'card-id' %>
+  <%= hidden_field_tag 'deck-id', @deck.id, id: 'deck-id' %>
 
 <script src="/js/study.js"></script>
