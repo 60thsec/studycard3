@@ -1,4 +1,5 @@
 <div class="container">
+
   <div class="centered">
     <h2><%= @deck.title %></h2>
     <%= link_to 'add new cards', new_deck_card_path(@deck), class: "small" %>
@@ -37,13 +38,13 @@
 
       <div id="card-control-console" style="display:none">
         <span id="edit-card-link"><a href="#">edit this card</a></span> |
-        <span id="delete-card-link"><a href="#">delete this card</a></span> |
-
+        <span id="delete-card-link"><a href="#">delete this card</a></span>
       </div>
 
       <div id="card-message" class="small">
       </div>
     </div>
+    
     <span class="hidden" id="deck-id"><%= @deck.id %></span>
     <span class="hidden" id="card-id"></span>
   </div>
