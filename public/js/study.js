@@ -38,7 +38,7 @@ $(document).ready(function(){
   function loadCard(card) {
     $('#card-q').html(card.front);
     $('#card-a').html(card.back);
-    $('#card-id').html(card.id);
+    $('#card-id').val(card.id);
   };
 
   function getDeckID() {

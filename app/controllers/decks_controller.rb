@@ -40,7 +40,7 @@ class DecksController < ApplicationController
 
   def study
     Card.find(params[:card]).supermemo(params[:rating])
-    render json: { 'card' => @deck.get_next_card, 'message' => '' }
+    render json: { 'card' => @deck.get_next_card, 'message' => 'next card' }
   end
 
   private

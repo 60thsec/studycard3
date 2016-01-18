@@ -4,6 +4,6 @@ class Card < ActiveRecord::Base
   belongs_to :deck
 
   def supermemo(rating)
-    # TODO
+    self.update_attributes(due: Time.now + 1.day)
   end
 end
