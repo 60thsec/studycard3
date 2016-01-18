@@ -4,6 +4,12 @@ class Card < ActiveRecord::Base
   belongs_to :deck
 
   def supermemo(rating)
-    self.update_attributes(due: Time.now + 1.day)
+
+    # This is a placeholder.  The real supermemo algorithm is currently in the
+    #   shop undergoing repairs and upgrades.
+
+    if rating == 'good'
+      self.update_attributes(due: Time.now + 1.day)
+    end
   end
 end

@@ -4,6 +4,6 @@ class Deck < ActiveRecord::Base
   validates  :title, presence: true
 
   def get_next_card
-    cards.where(["due < ?", Time.now]).reload.order(:due).first
+    cards.where(["due < ?", Time.now]).reload.order(:due).last
   end
 end
