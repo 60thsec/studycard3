@@ -4,7 +4,8 @@
     <% @decks.each do |deck| %>
       <li><%= link_to deck.title, deck_path(deck) %></li>
     <% end %>
-
-    <li><%= link_to "New Deck", new_deck_path %></li>
   </ul>
+
+  <%= link_to "New Deck", new_deck_path, class: "pure-button" %>
+  
 </div>
