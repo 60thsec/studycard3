@@ -96,9 +96,9 @@ RSpec.describe DecksController, type: :controller do
       }.to_not change(Deck, :count)
     end
 
-    it "redirects to decks#index" do
+    it "redirects to new_deck_cards upon deck creation" do
       post :create, deck: FactoryGirl.attributes_for(:deck)
-      expect(response).to redirect_to(decks_url)
+      expect(response).to redirect_to(new_deck_card_url(Deck.last))
     end
   end
 
