@@ -6,9 +6,25 @@ $(document).ready(function(){
     toggleDisplay();
   });
 
+  $('#easy-card-button').click(function(e) {
+    e.preventDefault();
+    makeAjaxCall({ rating: 'easy' });
+  });
+
   $('#good-card-button').click(function(e) {
     e.preventDefault();
     makeAjaxCall({ rating: 'good' });
+  });
+
+  $('#retry-card-button').click(function(e) {
+    e.preventDefault();
+    console.log('retry clicked')
+    makeAjaxCall({ rating: 'retry' });
+  });
+
+  $('#missed-card-button').click(function(e) {
+    e.preventDefault();
+    makeAjaxCall({ rating: 'missed' });
   });
 
   function toggleDisplay() {
