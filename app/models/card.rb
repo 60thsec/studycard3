@@ -4,8 +4,7 @@ class Card < ActiveRecord::Base
   belongs_to :deck
 
   def supermemo(rating)
-    RATINGS = ['missed', 'retry', 'good', 'easy']
-    q = RATINGS.index(rating)
+    q = quantify(rating)
 
     # Set new efactor
     self.efactor = self.efactor + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02))
@@ -28,7 +27,7 @@ class Card < ActiveRecord::Base
 
   private
     def quantify(rating)
-      RATINGS = ['missed', 'retry', 'good', 'easy']
+      RATINGS = ['missed', '', 'retry', '', 'good', 'easy']
       RATINGS.index(rating)
     end
 end
