@@ -39,7 +39,10 @@ class DecksController < ApplicationController
   end
 
   def study
-    Card.find(params[:card]).supermemo(params[:rating])
+    unless params[:rating] == 'init'
+      Card.find(params[:card]).supermemo(params[:rating])
+    end
+    
     render json: { 'card' => @deck.get_next_card, 'message' => 'next card' }
   end
 

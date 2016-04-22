@@ -6,28 +6,48 @@ class Card < ActiveRecord::Base
   def supermemo(rating)
     q = quantify(rating)
 
-    # Set new efactor
-    self.efactor = self.efactor + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02))
-    self.efactor = 1.3 if self.efactor < 1.3
+    self.efactor = 2.5 unless self.efactor
+    self.repetition = 0 unless self.repetition
 
-    # Set new interval
+    self.set_efactor(q)
+    self.set_interval
+    self.set_due(q)
 
-    # Set new due_date
+    self.save
+  end
 
-    if rating == 'easy'
-      self.update_attributes(due: Time.now + 2.days)
-    elsif rating == 'good'
-      self.update_attributes(due: Time.now + 1.day)
-    elsif rating == 'retry'
-      self.update_attributes(due: Time.now + 2.minutes)
-    elsif rating == 'missed'
-      self.update_attributes(due: Time.now + 2.minutes)
+  def set_efactor(q)
+    if q < 3
+      self.repetition = 1
+    else
+      self.efactor = self.efactor + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02))
+      self.efactor = 1.3 if self.efactor < 1.3
+
+      self.repetition += 1
+    end
+  end
+
+  def set_due(q)
+    if q < 3
+      self.due = Time.now + rand(2..4).minutes
+    else
+      self.due = Time.now + interval.days
+    end
+  end
+
+  def set_interval
+    if self.repetition == 1
+      self.interval = 1
+    elsif self.repetition == 2
+      self.interval = 6
+    else
+      self.interval = (self.interval * self.efactor).floor
     end
   end
 
   private
     def quantify(rating)
-      RATINGS = ['missed', '', 'retry', '', 'good', 'easy']
-      RATINGS.index(rating)
+      ratings = ['missed', '', 'retry', '', 'good', 'easy']
+      ratings.index(rating)
     end
 end
