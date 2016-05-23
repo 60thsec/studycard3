@@ -10,11 +10,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:index, :create, :show, :update, :destroy]
+      resources :sessions
     end
   end
 
   get    '/login'      => 'sessions#new'
   delete '/logout'     => 'sessions#destroy'
   post   '/study/:id'  => 'decks#study'
-
 end
