@@ -9,7 +9,8 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   protected
   def authenticate
-    # token = params[:auth_token]
-    return false
+    return true if User.find(params[:user]).auth_token == params[:auth]
+    self.status = :unauthorized
+    self.response_body = { error: 'Access denied' }.to_json
   end
 end
