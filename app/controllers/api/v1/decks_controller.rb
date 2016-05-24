@@ -3,7 +3,12 @@ class Api::V1::DecksController < Api::V1::BaseController
 
   def index
     user = authenticate
+    decks = []
 
-    render json: user
+    user.decks.each do |deck|
+      decks << {id: deck.id, title: deck.title}
+    end
+
+    render json: decks
   end
 end
