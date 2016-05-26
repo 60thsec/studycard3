@@ -1,8 +1,8 @@
 class Api::V1::DecksController < Api::V1::BaseController
-  # before_action :authenticate
+  before_action :authenticate
 
   def index
-    user = authenticate
+    user = User.find(params[:user])
     decks = []
 
     user.decks.each do |deck|
@@ -10,5 +10,12 @@ class Api::V1::DecksController < Api::V1::BaseController
     end
 
     render json: decks
+  end
+
+  def show
+    user = authenticate
+    deck = Deck.find(params[:id])
+
+    render json: deck
   end
 end
