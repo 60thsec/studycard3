@@ -25,7 +25,7 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
                 function HomeComponent(http) {
                     var _this = this;
                     this.http = http;
-                    this.http.get('http://localhost:3000/api')
+                    this.http.get('http://localhost:3000/api/v1/decks?auth=d26b896967444510804cab2f4e0d4d5f&user=1')
                         .subscribe(function (data) { return _this.message = data.json().some; }, function (err) { return console.log(err); });
                 }
                 HomeComponent = __decorate([
