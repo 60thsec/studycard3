@@ -5,6 +5,9 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 node_modules/
+public/app/**/*.js
+public/app/**/*.js.map
+
 
 # Ignore bundler config.
 /.bundle
