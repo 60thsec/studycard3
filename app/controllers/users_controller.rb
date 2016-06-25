@@ -13,12 +13,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.auth_token = SecureRandom.urlsafe_base64(n=32)
 
     if @user.save
       auth_log_in(@user)
       flash[:success] = "#{@user.username} created"
       redirect_to user_url(@user)
     else
+      flash[:error] = "Error: #{@user.errors.messages}"
       render :new
     end
   end
@@ -40,6 +42,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     flash[:success] = "Deleted #{@user.username}"
+    session.destroy
     @user.destroy
     redirect_to root_url
   end
