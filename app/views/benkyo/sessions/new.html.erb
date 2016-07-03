@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Sign in</h2>
+
+  <%= form_for :session, url: sessions_path,
+               html: {class: 'pure-form pure-form-stacked'} do |f| %>
+
+    <div class="form-div">
+      <%= f.label :username %>
+      <%= f.text_field :username, autofocus: true %>
+    </div>
+
+    <div class="form-div">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="form-div">
+      <%= f.submit 'Sign in', class: 'pure-button' %>
+    </div>
+  <% end %>
+</div>
