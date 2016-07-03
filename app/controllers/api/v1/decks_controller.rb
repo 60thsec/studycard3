@@ -13,14 +13,13 @@ class Api::V1::DecksController < Api::V1::BaseController
   end
 
   def show
-    # user = authenticate
-    deck = Deck.find(params[:id])
+    deck_id = params[:id] || params[:deck]
+    deck = Deck.find(deck_id)
 
     render json: deck.get_next_card
   end
 
   def study
-    p params
     unless params[:rating] == 'init'
       Card.find(params[:card]).supermemo(params[:rating])
     end

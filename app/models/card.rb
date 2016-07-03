@@ -4,7 +4,6 @@ class Card < ActiveRecord::Base
   belongs_to :deck
 
   def supermemo(rating)
-    # q = quantify(rating)
     q = rating.to_i
 
     self.efactor = 2.5 unless self.efactor

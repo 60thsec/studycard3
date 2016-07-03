@@ -8,10 +8,10 @@ class Api::V1::BaseController < ApplicationController
   end
 
   def authenticate
-    user = User.find(params[:user])
+    @user = User.find(params[:user])
 
-    if user.auth_token == params[:auth]
-      return user
+    if @user.auth_token == params[:auth]
+      return @user
     else
       self.status = :unauthorized
       self.response_body = { error: 'Access denied' }.to_json
