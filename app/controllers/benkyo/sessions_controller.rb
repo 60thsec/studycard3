@@ -8,7 +8,7 @@ class Benkyo::SessionsController < ApplicationController
     if @user && @user.authenticate(params['session']['password'])
       auth_log_in(@user)
       flash[:success] = "Hi, #{@user.username}"
-      redirect_to decks_url
+      redirect_to 'http://localhost:3030'
     else
       flash[:error] = "Sorry, username or password was invalid."
       render 'sessions/new'
