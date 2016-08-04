@@ -30,6 +30,11 @@ class Api::V1::DecksController < Api::V1::BaseController
     end
 
     @deck = Deck.find(Card.find(params[:card]).deck)
-    render json: @deck.get_next_card
+    card = @deck.get_next_card.attributes
+    card['prev_card'] = 'previous card coming'
+    puts '&' * 50
+    p card
+    # render json: @deck.get_next_card
+    render json: card
   end
 end
