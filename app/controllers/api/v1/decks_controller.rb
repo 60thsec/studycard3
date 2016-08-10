@@ -22,16 +22,17 @@ class Api::V1::DecksController < Api::V1::BaseController
   end
 
   def study
+    prev_card = Card.find(params[:card])
     puts '*' * 50
-    p params
+    p prev_card
 
     unless params[:rating] == 'init'
-      Card.find(params[:card]).supermemo(params[:rating])
+      prev_card.supermemo(params[:rating])
     end
 
     @deck = Deck.find(Card.find(params[:card]).deck)
     card = @deck.get_next_card.attributes
-    card['prev_card'] = 'previous card coming'
+    card['prev_card'] = "\"#{prev_card.front}\" will be due again #{prev_card.due.strftime('%A %B %-d, %Y')}"
     puts '&' * 50
     p card
     # render json: @deck.get_next_card
