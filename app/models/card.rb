@@ -50,4 +50,8 @@ class Card < ActiveRecord::Base
       ratings = ['missed', '', 'retry', '', 'good', 'easy']
       ratings.index(rating)
     end
+
+    def check_due
+      due = Time.now if !due
+    end
 end
